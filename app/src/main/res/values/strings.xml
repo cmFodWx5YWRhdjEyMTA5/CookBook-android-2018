@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Dậy nấu ăn ngon</string>
+
+    // Navigation
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    // action
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Cancel</string>
+
+    // dialog
+    <string name="title_dialog">Dậy nấu ăn ngon</string>
+    <string name="waiting_message">Please wait</string>
+
+    // msg
+    <string name="error_not_connect_to_internet">You are not connect to internet.</string>
+    <string name="msg_exit_app">Do you want to exit?</string>
+</resources>
