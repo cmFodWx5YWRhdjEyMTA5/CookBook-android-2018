@@ -40,7 +40,7 @@ public class ListDecorator extends ItemTouchHelper {
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
         if (parent.getChildAdapterPosition(view) != parent.getAdapter().getItemCount() - 1) {
-            outRect.bottom = 10;
+            outRect.bottom = 20;
         }
     }
 }

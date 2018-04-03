@@ -50,6 +50,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
     implementation 'com.android.support:design:27.1.0'
+    compile 'com.android.support:cardview-v7:27.1.0'
 
     //dagger2
     compile 'com.google.dagger:dagger:2.5'
@@ -84,5 +85,8 @@ dependencies {
 
     // Firebase
     compile 'com.google.firebase:firebase-core:12.0.0'
+
+    // Indicator
+    compile 'me.relex:circleindicator:1.2.2@aar'
 }
 apply plugin: 'com.google.gms.google-services'

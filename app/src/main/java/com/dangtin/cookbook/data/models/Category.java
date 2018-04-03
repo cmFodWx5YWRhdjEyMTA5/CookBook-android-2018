@@ -16,6 +16,10 @@ public class Category {
     @SerializedName("keisuke_name")
     private String name;
 
+    public Category(String name) {
+        this.name = name;
+    }
+
     public int getId() {
         return id;
     }

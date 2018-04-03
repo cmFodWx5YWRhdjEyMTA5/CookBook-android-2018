@@ -3,4 +3,15 @@
     <color name="colorPrimary">#FC5353</color>
     <color name="colorPrimaryDark">#FC5353</color>
     <color name="colorAccent">#FC5353</color>
+
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#757575</color>
+
+    <color name="dividerColor">#BDBDBD</color>
+    <color name="transparent">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="purple">#9C27B0</color>
+    <color name="green">#4CAF50</color>
+    <color name="redAccent">#ffebee</color>
 </resources>

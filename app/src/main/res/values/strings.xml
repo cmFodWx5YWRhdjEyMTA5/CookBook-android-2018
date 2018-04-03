@@ -2,18 +2,38 @@
     <string name="app_name">Dậy nấu ăn ngon</string>
 
     // Navigation
-    <string name="drawer_open">Open</string>
-    <string name="drawer_close">Close</string>
+    <string name="drawer_open">Mở</string>
+    <string name="drawer_close">Đóng</string>
+
+    // Menu
+    <string name="require_food">Yêu cầu hướng dẫn nấu món gì?</string>
+    <string name="category">Thể loại</string>
+    <string name="my_kitchen">Bếp của tôi</string>
+    <string name="rate_app">Đánh giá ứng dụng</string>
+    <string name="share_app">Chia sẻ ứng dụng</string>
+    <string name="information_app">Thông tin ứng dụng</string>
+    <string name="more_app">Các ứng dụng khác</string>
+    <string name="liked">Đã thích</string>
+    <string name="saw">Đã xem</string>
 
     // action
     <string name="action_ok">OK</string>
-    <string name="action_cancel">Cancel</string>
+    <string name="action_cancel">Hủy</string>
+    <string name="action_setting">Cài đặt</string>
+    <string name="action_my_profile">Tài khoản của tôi</string>
+    <string name="action_logout">Đăng xuất</string>
+    <string name="action_search">Tìm kiếm</string>
 
     // dialog
     <string name="title_dialog">Dậy nấu ăn ngon</string>
-    <string name="waiting_message">Please wait</string>
+    <string name="waiting_message">Vui lòng đợi</string>
 
     // msg
-    <string name="error_not_connect_to_internet">You are not connect to internet.</string>
-    <string name="msg_exit_app">Do you want to exit?</string>
+    <string name="error_not_connect_to_internet">Vui lòng kiểm tra kết nối mạng của bạn.</string>
+    <string name="msg_exit_app">Bạn có chắc chắn muốn thoát ứng dụng?</string>
+
+    // Home screen
+    <string name="title_menu_latest">Thực đơn mới nhất</string>
+    <string name="title_food_latest">Món mới nhất</string>
+    <string name="see_all">Xem tất cả</string>
 </resources>

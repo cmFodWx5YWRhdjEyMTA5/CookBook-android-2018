@@ -3,6 +3,8 @@ package com.dangtin.cookbook.ui.base;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.dangtin.cookbook.R;
@@ -16,6 +18,26 @@ public abstract class BaseMVPDialogActivity extends BaseActivity implements Base
         super.onCreate(savedInstanceState);
         createProgressDialog();
         createAlertDialog();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_setting:
+                Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
+                return true;
+
+            case R.id.action_my_profile:
+                Toast.makeText(this, "My Profile", Toast.LENGTH_SHORT).show();
+                return true;
+
+            case R.id.action_logout:
+                Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override

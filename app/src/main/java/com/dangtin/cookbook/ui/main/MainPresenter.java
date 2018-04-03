@@ -7,8 +7,16 @@
 
 package com.dangtin.cookbook.ui.main;
 
+import android.content.Context;
+
+import com.dangtin.cookbook.constant.FakeData;
 import com.dangtin.cookbook.data.DataManager;
+import com.dangtin.cookbook.data.models.Category;
+import com.dangtin.cookbook.data.models.Featured;
+import com.dangtin.cookbook.data.models.HomeObject;
 import com.dangtin.cookbook.ui.base.BasePresenter;
+
+import java.util.ArrayList;
 
 import javax.inject.Inject;
 
@@ -24,5 +32,17 @@ public class MainPresenter extends BasePresenter<MainMVPView> {
     @Override
     public void initialView(MainMVPView mvpView) {
         super.initialView(mvpView);
+    }
+
+    public ArrayList<Category> getListCategory() {
+        return FakeData.getListCategory();
+    }
+
+    public ArrayList<Featured> getListFeatured() {
+        return FakeData.getListFeatured();
+    }
+
+    public void getListHomeObject(Context context) {
+        getMvpView().updateListHomeObject(FakeData.getListHomeObject(context));
     }
 }
