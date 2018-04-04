@@ -88,5 +88,11 @@ dependencies {
 
     // Indicator
     compile 'me.relex:circleindicator:1.2.2@aar'
+
+    // Admob native ads
+    compile 'com.google.android.gms:play-services-ads:12.0.0'
+
+    // Flowlayout for category
+    compile 'com.wefika:flowlayout:0.4.1'
 }
 apply plugin: 'com.google.gms.google-services'

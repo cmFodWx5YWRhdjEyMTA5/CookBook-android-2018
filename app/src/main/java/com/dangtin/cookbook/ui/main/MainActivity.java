@@ -21,6 +21,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.afollestad.materialdialogs.DialogAction;
@@ -32,6 +33,7 @@ import com.dangtin.cookbook.adapter.ListHomeAdapter;
 import com.dangtin.cookbook.constant.GlobalFuntion;
 import com.dangtin.cookbook.data.models.HomeObject;
 import com.dangtin.cookbook.ui.base.BaseMVPDialogActivity;
+import com.dangtin.cookbook.ui.food.FoodActivity;
 
 import java.util.ArrayList;
 import java.util.Timer;
@@ -45,7 +47,7 @@ import me.relex.circleindicator.CircleIndicator;
 
 
 public class MainActivity extends BaseMVPDialogActivity implements MainMVPView,
-        SwipeRefreshLayout.OnRefreshListener{
+        SwipeRefreshLayout.OnRefreshListener {
 
     @Inject
     MainPresenter presenter;
@@ -164,6 +166,12 @@ public class MainActivity extends BaseMVPDialogActivity implements MainMVPView,
         CategoryAdapter categoryAdapter = new CategoryAdapter(this, presenter.getListCategory());
         lvCategory = findViewById(R.id.lvCategory);
         lvCategory.setAdapter(categoryAdapter);
+        lvCategory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                GlobalFuntion.startActivity(MainActivity.this, FoodActivity.class);
+            }
+        });
     }
 
     private void initData() {

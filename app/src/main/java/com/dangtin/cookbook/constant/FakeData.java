@@ -3,11 +3,15 @@ package com.dangtin.cookbook.constant;
 import android.content.Context;
 
 import com.dangtin.cookbook.R;
+import com.dangtin.cookbook.data.models.Admob;
 import com.dangtin.cookbook.data.models.Category;
 import com.dangtin.cookbook.data.models.Featured;
 import com.dangtin.cookbook.data.models.Food;
 import com.dangtin.cookbook.data.models.HomeObject;
+import com.dangtin.cookbook.data.models.LevelDifficult;
+import com.dangtin.cookbook.data.models.MaterialFood;
 import com.dangtin.cookbook.data.models.Menu;
+import com.dangtin.cookbook.data.models.QuantityFood;
 
 import java.util.ArrayList;
 
@@ -19,14 +23,14 @@ public class FakeData {
 
     public static ArrayList<Category> getListCategory() {
         ArrayList<Category> categories = new ArrayList<>();
-        categories.add(new Category("Món Xào"));
-        categories.add(new Category("Món Canh"));
-        categories.add(new Category("Món Chiên"));
-        categories.add(new Category("Món Nướng"));
-        categories.add(new Category("Món Kho"));
-        categories.add(new Category("Món Nộm"));
-        categories.add(new Category("Món Bánh"));
-        categories.add(new Category("Món Tráng Miệng"));
+        categories.add(new Category(1,"Món Xào"));
+        categories.add(new Category(2,"Món Canh"));
+        categories.add(new Category(3,"Món Chiên"));
+        categories.add(new Category(4,"Món Nướng"));
+        categories.add(new Category(5,"Món Kho"));
+        categories.add(new Category(6,"Món Nộm"));
+        categories.add(new Category(7,"Món Bánh"));
+        categories.add(new Category(8,"Món Tráng Miệng"));
 
         return categories;
     }
@@ -57,6 +61,75 @@ public class FakeData {
         listFood.add(new Food());
         list.add(new HomeObject(HomeObject.TYPE_FOOD_LATEST,
                 context.getString(R.string.title_food_latest), null, listFood));
+
+        ArrayList<Admob> listAdmob = new ArrayList<>();
+        listAdmob.add(new Admob());
+        list.add(new HomeObject(HomeObject.TYPE_ADMOB, listAdmob));
+
+        for (int i = 0; i < getListCategory().size(); i++) {
+            list.add(new HomeObject(HomeObject.TYPE_CATEGORY, getListCategory().get(i).getName(), null, listFood));
+        }
+
+        list.add(new HomeObject(HomeObject.TYPE_ADMOB, listAdmob));
+
+        return list;
+    }
+
+    public static ArrayList<Menu> getListMenu() {
+        ArrayList<Menu> listMenu = new ArrayList<>();
+        listMenu.add(new Menu());
+        listMenu.add(new Menu());
+        listMenu.add(new Menu());
+        listMenu.add(new Menu());
+        listMenu.add(new Menu());
+        listMenu.add(new Menu());
+
+        return listMenu;
+    }
+
+    public static ArrayList<QuantityFood> getListQuantityFood() {
+        ArrayList<QuantityFood> list = new ArrayList<>();
+        list.add(new QuantityFood(2));
+        list.add(new QuantityFood(3));
+        list.add(new QuantityFood(4));
+        list.add(new QuantityFood(5));
+
+        return list;
+    }
+
+    public static ArrayList<LevelDifficult> getListLevelDifficult() {
+        ArrayList<LevelDifficult> list = new ArrayList<>();
+        list.add(new LevelDifficult(1, "Dễ"));
+        list.add(new LevelDifficult(2, "Trung bình"));
+        list.add(new LevelDifficult(3, "Khó"));
+
+        return list;
+    }
+
+    public static ArrayList<Food> getListFood() {
+        ArrayList<Food> listMenu = new ArrayList<>();
+        listMenu.add(new Food());
+        listMenu.add(new Food());
+        listMenu.add(new Food());
+        listMenu.add(new Food());
+        listMenu.add(new Food());
+        listMenu.add(new Food());
+        listMenu.add(new Food());
+        listMenu.add(new Food());
+        listMenu.add(new Food());
+        listMenu.add(new Food());
+
+        return listMenu;
+    }
+
+    public static ArrayList<MaterialFood> getListMaterialFood() {
+        ArrayList<MaterialFood> list = new ArrayList<>();
+        list.add(new MaterialFood("Thịt gà"));
+        list.add(new MaterialFood("Thịt bò"));
+        list.add(new MaterialFood("Trứng"));
+        list.add(new MaterialFood("Bắp cải"));
+        list.add(new MaterialFood("Hành"));
+        list.add(new MaterialFood("Rau ngải cứu"));
 
         return list;
     }

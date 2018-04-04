@@ -17,6 +17,12 @@ public class HomeObject {
     private String title;
     private ArrayList<Menu> listMenu;
     private ArrayList<Food> listFood;
+    private ArrayList<Admob> listAdmob;
+
+    public HomeObject(int type, ArrayList<Admob> listAdmob) {
+        this.type = type;
+        this.listAdmob = listAdmob;
+    }
 
     public HomeObject(int type, String title, ArrayList<Menu> listMenu, ArrayList<Food> listFood) {
         this.type = type;
@@ -55,5 +61,13 @@ public class HomeObject {
 
     public void setListFood(ArrayList<Food> listFood) {
         this.listFood = listFood;
+    }
+
+    public ArrayList<Admob> getListAdmob() {
+        return listAdmob;
+    }
+
+    public void setListAdmob(ArrayList<Admob> listAdmob) {
+        this.listAdmob = listAdmob;
     }
 }

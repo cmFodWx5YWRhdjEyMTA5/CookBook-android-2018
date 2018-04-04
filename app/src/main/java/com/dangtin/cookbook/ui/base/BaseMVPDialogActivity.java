@@ -24,6 +24,10 @@ public abstract class BaseMVPDialogActivity extends BaseActivity implements Base
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+
             case R.id.action_setting:
                 Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
                 return true;
@@ -35,6 +39,15 @@ public abstract class BaseMVPDialogActivity extends BaseActivity implements Base
             case R.id.action_logout:
                 Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
                 return true;
+
+            case R.id.action_sort_by_date:
+                Toast.makeText(this, "Sort by date", Toast.LENGTH_SHORT).show();
+                return true;
+
+            case R.id.action_sort_by_view:
+                Toast.makeText(this, "Sort by view", Toast.LENGTH_SHORT).show();
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }

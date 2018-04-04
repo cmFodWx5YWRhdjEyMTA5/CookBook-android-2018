@@ -7,7 +7,7 @@
 package com.dangtin.cookbook.adapter.food;
 
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 import javax.inject.Inject;
 
-public class FoodHorizontalAdapter extends RecyclerView.Adapter<FoodHorizontalAdapter.FoodHorizontalViewHolder>
+public class FoodGridViewAdapter extends RecyclerView.Adapter<FoodGridViewAdapter.FoodHorizontalViewHolder>
         implements Releasable {
 
     private Context context;
@@ -31,7 +31,7 @@ public class FoodHorizontalAdapter extends RecyclerView.Adapter<FoodHorizontalAd
     private RecyclerView mRecyclerView;
 
     @Inject
-    public FoodHorizontalAdapter(@ActivityContext Context context) {
+    public FoodGridViewAdapter(@ActivityContext Context context) {
         this.context = context;
     }
 
@@ -59,8 +59,7 @@ public class FoodHorizontalAdapter extends RecyclerView.Adapter<FoodHorizontalAd
 
     public void injectInto(RecyclerView recyclerView) {
         mRecyclerView = recyclerView;
-        LinearLayoutManager layoutManager = new LinearLayoutManager(context,
-                LinearLayoutManager.HORIZONTAL, false);
+        GridLayoutManager layoutManager = new GridLayoutManager(context, 2);
         mRecyclerView.setNestedScrollingEnabled(false);
         mRecyclerView.setFocusable(false);
         mRecyclerView.setLayoutManager(layoutManager);
@@ -83,7 +82,7 @@ public class FoodHorizontalAdapter extends RecyclerView.Adapter<FoodHorizontalAd
 
         public static FoodHorizontalViewHolder create(ViewGroup parent) {
             return new FoodHorizontalViewHolder(LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.item_food_horizontal, parent, false));
+                    .inflate(R.layout.item_food_grid_view, parent, false));
         }
 
         @Override

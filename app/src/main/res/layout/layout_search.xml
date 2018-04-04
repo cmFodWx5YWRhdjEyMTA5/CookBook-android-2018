@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/define_dimen_10"
+        android:layout_marginLeft="@dimen/define_dimen_10"
+        android:layout_marginRight="@dimen/define_dimen_10"
+        android:layout_marginTop="@dimen/define_dimen_20"
+        android:background="@drawable/bg_white_shape_round_corner">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/image_search"
+            android:background="@color/transparent"
+            android:gravity="center"
+            android:hint="@string/action_search"
+            android:padding="@dimen/define_dimen_10"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_small" />
+
+        <ImageView
+            android:id="@+id/image_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/define_dimen_10"
+            android:src="@drawable/ic_search_black" />
+    </RelativeLayout>
+
+    <com.dangtin.cookbook.ui.widget.textview.RobotoMediumTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/define_dimen_10"
+        android:text="@string/suggest_search"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/text_size_small" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/define_dimen_10"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.dangtin.cookbook.ui.widget.textview.RobotoMediumTextView
+            android:id="@+id/tvDataSearch"
+            android:layout_width="@dimen/define_dimen_80"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/define_dimen_10"
+            android:text="@string/quantity_food"
+            android:textAllCaps="true"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="@dimen/text_size_xsmall" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcvDataSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="@dimen/define_dimen_5"
+        android:layout_marginLeft="@dimen/define_dimen_10"
+        android:layout_marginTop="@dimen/define_dimen_5"
+        android:background="@color/dividerColor" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.dangtin.cookbook.ui.widget.textview.RobotoMediumTextView
+            android:layout_width="@dimen/define_dimen_80"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/define_dimen_10"
+            android:text="@string/level_difficult"
+            android:textAllCaps="true"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="@dimen/text_size_xsmall" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcvLevelDifficult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>
+

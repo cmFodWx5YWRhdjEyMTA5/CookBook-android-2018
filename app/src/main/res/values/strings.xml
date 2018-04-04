@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Dậy nấu ăn ngon</string>
 
+    <string name="ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
     // Navigation
     <string name="drawer_open">Mở</string>
     <string name="drawer_close">Đóng</string>
@@ -23,6 +25,8 @@
     <string name="action_my_profile">Tài khoản của tôi</string>
     <string name="action_logout">Đăng xuất</string>
     <string name="action_search">Tìm kiếm</string>
+    <string name="action_sort_by_view">Sắp xếp theo lượt xem</string>
+    <string name="action_sort_by_date">Sắp xếp theo ngày</string>
 
     // dialog
     <string name="title_dialog">Dậy nấu ăn ngon</string>
@@ -36,4 +40,16 @@
     <string name="title_menu_latest">Thực đơn mới nhất</string>
     <string name="title_food_latest">Món mới nhất</string>
     <string name="see_all">Xem tất cả</string>
+    <string name="see_all_underline"><u>Xem tất cả</u></string>
+
+    // Menu screen
+    <string name="menu">Thực đơn</string>
+    <string name="suggest_search">Gợi ý tìm kiếm</string>
+    <string name="quantity_food">Số món</string>
+    <string name="material_food">Nguyên liệu</string>
+    <string name="level_difficult">Độ khó</string>
+
+    // Food screen
+    <string name="food">Món ăn</string>
+    <string name="all">Tất cả</string>
 </resources>

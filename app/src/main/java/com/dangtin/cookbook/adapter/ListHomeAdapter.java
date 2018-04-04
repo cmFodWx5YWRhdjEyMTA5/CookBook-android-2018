@@ -18,11 +18,17 @@ import android.widget.TextView;
 import com.dangtin.cookbook.R;
 import com.dangtin.cookbook.adapter.base.BaseRecyclerViewAdapter;
 import com.dangtin.cookbook.adapter.base.Releasable;
+import com.dangtin.cookbook.adapter.food.FoodGridViewAdapter;
 import com.dangtin.cookbook.adapter.food.FoodHorizontalAdapter;
 import com.dangtin.cookbook.adapter.menu.MenuVerticalAdapter;
+import com.dangtin.cookbook.constant.GlobalFuntion;
 import com.dangtin.cookbook.data.models.HomeObject;
 import com.dangtin.cookbook.injection.ActivityContext;
+import com.dangtin.cookbook.ui.food.FoodActivity;
+import com.dangtin.cookbook.ui.menu.MenuActivity;
 import com.dangtin.cookbook.utils.ListDecorator;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.NativeExpressAdView;
 
 import java.util.ArrayList;
 
@@ -48,8 +54,17 @@ public class ListHomeAdapter extends RecyclerView.Adapter<BaseRecyclerViewAdapte
             case HomeObject.TYPE_MENU_LATEST:
                 viewHolder = MenuLatestViewHolder.create(parent);
                 break;
+
             case HomeObject.TYPE_FOOD_LATEST:
                 viewHolder = FoodLatestViewHolder.create(parent);
+                break;
+
+            case HomeObject.TYPE_CATEGORY:
+                viewHolder = FoodOfCategoryViewHolder.create(parent);
+                break;
+
+            case HomeObject.TYPE_ADMOB:
+                viewHolder = AdmobViewHolder.create(parent);
                 break;
         }
         return viewHolder;
@@ -94,6 +109,9 @@ public class ListHomeAdapter extends RecyclerView.Adapter<BaseRecyclerViewAdapte
         @BindView(R.id.tvTitle)
         TextView tvTitle;
 
+        @BindView(R.id.tvSeeAll)
+        TextView tvSeeAll;
+
         @BindView(R.id.rcvData)
         RecyclerView rcvData;
 
@@ -115,6 +133,13 @@ public class ListHomeAdapter extends RecyclerView.Adapter<BaseRecyclerViewAdapte
             menuVerticalAdapter = new MenuVerticalAdapter(context);
             menuVerticalAdapter.injectInto(rcvData);
             menuVerticalAdapter.setListData(homeObject.getListMenu());
+
+            tvSeeAll.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    GlobalFuntion.startActivity(context, MenuActivity.class);
+                }
+            });
         }
     }
 
@@ -123,10 +148,13 @@ public class ListHomeAdapter extends RecyclerView.Adapter<BaseRecyclerViewAdapte
         @BindView(R.id.tvTitle)
         TextView tvTitle;
 
+        @BindView(R.id.tvSeeAll)
+        TextView tvSeeAll;
+
         @BindView(R.id.rcvData)
         RecyclerView rcvData;
 
-        private FoodHorizontalAdapter foodHorizontalAdapter;
+        private FoodGridViewAdapter foodGridViewAdapter;
 
         public FoodLatestViewHolder(View itemView) {
             super(itemView);
@@ -141,10 +169,75 @@ public class ListHomeAdapter extends RecyclerView.Adapter<BaseRecyclerViewAdapte
         public void bindData(Context context, HomeObject homeObject, int position) {
             tvTitle.setText(homeObject.getTitle());
 
+            foodGridViewAdapter = new FoodGridViewAdapter(context);
+            foodGridViewAdapter.injectInto(rcvData);
+            foodGridViewAdapter.setListData(homeObject.getListFood());
+
+            tvSeeAll.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    GlobalFuntion.startActivity(context, FoodActivity.class);
+                }
+            });
+        }
+    }
+
+    public static class FoodOfCategoryViewHolder extends BaseRecyclerViewAdapter.BaseViewHolder<HomeObject> {
+
+        @BindView(R.id.tvTitle)
+        TextView tvTitle;
+
+        @BindView(R.id.tvSeeAll)
+        TextView tvSeeAll;
+
+        @BindView(R.id.rcvData)
+        RecyclerView rcvData;
+
+        private FoodHorizontalAdapter foodHorizontalAdapter;
+
+        public FoodOfCategoryViewHolder(View itemView) {
+            super(itemView);
+        }
+
+        public static FoodOfCategoryViewHolder create(ViewGroup parent) {
+            return new FoodOfCategoryViewHolder(LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_list_food_of_category, parent, false));
+        }
+
+        @Override
+        public void bindData(Context context, HomeObject homeObject, int position) {
+            tvTitle.setText(homeObject.getTitle());
+
             foodHorizontalAdapter = new FoodHorizontalAdapter(context);
             foodHorizontalAdapter.injectInto(rcvData);
             foodHorizontalAdapter.setListData(homeObject.getListFood());
 
+            tvSeeAll.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    GlobalFuntion.startActivity(context, FoodActivity.class);
+                }
+            });
+        }
+    }
+
+    public static class AdmobViewHolder extends BaseRecyclerViewAdapter.BaseViewHolder<HomeObject> {
+
+        @BindView(R.id.adView)
+        NativeExpressAdView mAdView;
+
+        public AdmobViewHolder(View itemView) {
+            super(itemView);
+        }
+
+        public static AdmobViewHolder create(ViewGroup parent) {
+            return new AdmobViewHolder(LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_admob_native_ads, parent, false));
+        }
+
+        @Override
+        public void bindData(Context context, HomeObject homeObject, int position) {
+            mAdView.loadAd(new AdRequest.Builder().addTestDevice("9627BCEB017A685585C8DA95CB56DACF").build());
         }
     }
 }

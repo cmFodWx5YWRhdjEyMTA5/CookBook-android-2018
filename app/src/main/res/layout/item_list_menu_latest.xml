@@ -12,6 +12,13 @@
         android:layout_marginTop="@dimen/define_dimen_20"
         android:layout_height="wrap_content">
 
+        <View
+            android:layout_width="@dimen/define_dimen_16"
+            android:layout_height="0.5dp"
+            android:layout_marginRight="@dimen/define_dimen_5"
+            android:layout_gravity="center_vertical"
+            android:background="@color/colorPrimary"/>
+
         <com.dangtin.cookbook.ui.widget.textview.RobotoBoldTextView
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
@@ -36,6 +43,7 @@
         android:layout_height="wrap_content"/>
 
     <com.dangtin.cookbook.ui.widget.textview.RobotoRegularTextView
+        android:id="@+id/tvSeeAll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"

@@ -8,7 +8,9 @@
 package com.dangtin.cookbook.injection.components;
 
 import com.dangtin.cookbook.injection.modules.ActivityModule;
+import com.dangtin.cookbook.ui.food.FoodActivity;
 import com.dangtin.cookbook.ui.main.MainActivity;
+import com.dangtin.cookbook.ui.menu.MenuActivity;
 import com.dangtin.cookbook.ui.splash.SplashActivity;
 
 import dagger.Subcomponent;
@@ -19,4 +21,8 @@ public interface ActivityComponent {
     void inject(SplashActivity loginActivity);
 
     void inject(MainActivity mainActivity);
+
+    void inject(MenuActivity menuActivity);
+
+    void inject(FoodActivity foodActivity);
 }

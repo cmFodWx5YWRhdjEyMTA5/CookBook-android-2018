@@ -4,7 +4,7 @@
  *  Author DangTin. Create on 2017/11/19
  * ******************************************************************************
  */
-package com.dangtin.cookbook.adapter.food;
+package com.dangtin.cookbook.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,48 +12,52 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.dangtin.cookbook.R;
 import com.dangtin.cookbook.adapter.base.BaseRecyclerViewAdapter;
 import com.dangtin.cookbook.adapter.base.Releasable;
-import com.dangtin.cookbook.data.models.Food;
+import com.dangtin.cookbook.data.models.MaterialFood;
+import com.dangtin.cookbook.data.models.QuantityFood;
 import com.dangtin.cookbook.injection.ActivityContext;
 
 import java.util.ArrayList;
 
 import javax.inject.Inject;
 
-public class FoodHorizontalAdapter extends RecyclerView.Adapter<FoodHorizontalAdapter.FoodHorizontalViewHolder>
+import butterknife.BindView;
+
+public class MaterialFoodAdapter extends RecyclerView.Adapter<MaterialFoodAdapter.MaterialFoodViewHolder>
         implements Releasable {
 
     private Context context;
-    private ArrayList<Food> listFood;
+    private ArrayList<MaterialFood> listMaterialFood;
     private RecyclerView mRecyclerView;
 
     @Inject
-    public FoodHorizontalAdapter(@ActivityContext Context context) {
+    public MaterialFoodAdapter(@ActivityContext Context context) {
         this.context = context;
     }
 
     @Override
-    public FoodHorizontalViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        FoodHorizontalViewHolder viewHolder = FoodHorizontalViewHolder.create(parent);
+    public MaterialFoodViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        MaterialFoodViewHolder viewHolder = MaterialFoodViewHolder.create(parent);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(FoodHorizontalViewHolder holder, int position) {
-        holder.bindData(context, listFood.get(position), position);
+    public void onBindViewHolder(MaterialFoodViewHolder holder, int position) {
+        holder.bindData(context, listMaterialFood.get(position), position);
     }
 
     @Override
     public int getItemCount() {
-        return null == listFood ? 0 : listFood.size();
+        return null == listMaterialFood ? 0 : listMaterialFood.size();
     }
 
 
-    public void setListData(ArrayList<Food> list) {
-        this.listFood = list;
+    public void setListData(ArrayList<MaterialFood> list) {
+        this.listMaterialFood = list;
         notifyDataSetChanged();
     }
 
@@ -72,26 +76,25 @@ public class FoodHorizontalAdapter extends RecyclerView.Adapter<FoodHorizontalAd
         context = null;
     }
 
-    public static class FoodHorizontalViewHolder extends BaseRecyclerViewAdapter.BaseViewHolder<Food> {
+    public static class MaterialFoodViewHolder extends BaseRecyclerViewAdapter.BaseViewHolder<MaterialFood> {
 
-        /*@BindView(R.id.image_banner)
-        AspectRatioImageView imgBanner;*/
+        @BindView(R.id.tvTitle)
+        TextView tvTitle;
 
-        public FoodHorizontalViewHolder(View itemView) {
+        public MaterialFoodViewHolder(View itemView) {
             super(itemView);
         }
 
-        public static FoodHorizontalViewHolder create(ViewGroup parent) {
-            return new FoodHorizontalViewHolder(LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.item_food_horizontal, parent, false));
+        public static MaterialFoodViewHolder create(ViewGroup parent) {
+            return new MaterialFoodViewHolder(LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_search_material_food, parent, false));
         }
 
         @Override
-        public void bindData(Context context, Food food, int position) {
-            if (food != null) {
-
+        public void bindData(Context context, MaterialFood materialFood, int position) {
+            if (materialFood != null) {
+                tvTitle.setText(materialFood.getTitle());
             }
         }
-
     }
 }
