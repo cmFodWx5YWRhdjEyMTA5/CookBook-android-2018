@@ -52,4 +52,10 @@
     // Food screen
     <string name="food">Món ăn</string>
     <string name="all">Tất cả</string>
+
+    // Search screen
+    <string name="keyword_hot">Từ khóa HOT</string>
+    <string name="search_history">Lịch sử tìm kiếm</string>
+    <string name="clear_all">Xóa tất cả</string>
+    <string name="enter_keyword">Nhập từ khóa</string>
 </resources>

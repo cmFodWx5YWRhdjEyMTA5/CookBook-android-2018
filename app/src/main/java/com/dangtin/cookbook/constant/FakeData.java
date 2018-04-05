@@ -8,10 +8,12 @@ import com.dangtin.cookbook.data.models.Category;
 import com.dangtin.cookbook.data.models.Featured;
 import com.dangtin.cookbook.data.models.Food;
 import com.dangtin.cookbook.data.models.HomeObject;
+import com.dangtin.cookbook.data.models.KeywordHot;
 import com.dangtin.cookbook.data.models.LevelDifficult;
 import com.dangtin.cookbook.data.models.MaterialFood;
 import com.dangtin.cookbook.data.models.Menu;
 import com.dangtin.cookbook.data.models.QuantityFood;
+import com.dangtin.cookbook.data.models.SearchHistory;
 
 import java.util.ArrayList;
 
@@ -130,6 +132,38 @@ public class FakeData {
         list.add(new MaterialFood("Bắp cải"));
         list.add(new MaterialFood("Hành"));
         list.add(new MaterialFood("Rau ngải cứu"));
+
+        return list;
+    }
+
+    public static ArrayList<KeywordHot> getListKeywordHot() {
+        ArrayList<KeywordHot> list = new ArrayList<>();
+        list.add(new KeywordHot(1,"Thit ga"));
+        list.add(new KeywordHot(2,"Suon sao"));
+        list.add(new KeywordHot(3,"Ca kho"));
+        list.add(new KeywordHot(4,"Hanh"));
+        list.add(new KeywordHot(5,"Thuc don ngon"));
+        list.add(new KeywordHot(6,"Che Buoi"));
+        list.add(new KeywordHot(7,"Bo"));
+        list.add(new KeywordHot(8,"Cach nau che"));
+        list.add(new KeywordHot(9,"Tom Chien"));
+        list.add(new KeywordHot(10,"Muc"));
+
+        return list;
+    }
+
+    public static ArrayList<SearchHistory> getListSearchHistory() {
+        ArrayList<SearchHistory> list = new ArrayList<>();
+        list.add(new SearchHistory("Thit ga hap xa"));
+        list.add(new SearchHistory("Tom chien"));
+        list.add(new SearchHistory("Thi bo xao rau can"));
+        list.add(new SearchHistory("Ca hap bia"));
+        list.add(new SearchHistory("Che thap cam"));
+        list.add(new SearchHistory("O mai khe"));
+        list.add(new SearchHistory("Vit om gieng, sau, me"));
+        list.add(new SearchHistory("Ca chep om dua"));
+        list.add(new SearchHistory("Oc xoa sa uot"));
+        list.add(new SearchHistory("Ech om sau"));
 
         return list;
     }

@@ -8,6 +8,8 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.dangtin.cookbook.R;
+import com.dangtin.cookbook.constant.GlobalFuntion;
+import com.dangtin.cookbook.ui.search.SearchActivity;
 import com.dangtin.cookbook.utils.Utils;
 
 public abstract class BaseMVPDialogActivity extends BaseActivity implements BaseScreenMvpView {
@@ -26,6 +28,10 @@ public abstract class BaseMVPDialogActivity extends BaseActivity implements Base
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
+                return true;
+
+            case R.id.action_search:
+                GlobalFuntion.startActivity(this, SearchActivity.class);
                 return true;
 
             case R.id.action_setting:

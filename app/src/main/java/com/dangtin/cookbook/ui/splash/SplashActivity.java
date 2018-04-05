@@ -18,7 +18,6 @@ import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 
-
 public class SplashActivity extends BaseMVPDialogActivity implements SplashMVPView {
 
     @Inject
