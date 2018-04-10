@@ -12,6 +12,9 @@ import com.dangtin.cookbook.ui.food.FoodActivity;
 import com.dangtin.cookbook.ui.main.MainActivity;
 import com.dangtin.cookbook.ui.menu.MenuActivity;
 import com.dangtin.cookbook.ui.search.SearchActivity;
+import com.dangtin.cookbook.ui.search_result.SearchResultActivity;
+import com.dangtin.cookbook.ui.search_result.food_result.FoodResultFragment;
+import com.dangtin.cookbook.ui.search_result.menu_result.MenuResultFragment;
 import com.dangtin.cookbook.ui.splash.SplashActivity;
 
 import dagger.Subcomponent;
@@ -28,4 +31,10 @@ public interface ActivityComponent {
     void inject(FoodActivity foodActivity);
 
     void inject(SearchActivity searchActivity);
+
+    void inject(SearchResultActivity searchResultActivity);
+
+    void inject(MenuResultFragment menuResultFragment);
+
+    void inject(FoodResultFragment foodResultFragment);
 }

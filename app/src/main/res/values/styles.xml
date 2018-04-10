@@ -25,4 +25,10 @@
             <flag name="all" value="15" />
         </attr>
     </declare-styleable>
+
+    <!-- tab layout-->
+    <style name="MyTabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
 </resources>

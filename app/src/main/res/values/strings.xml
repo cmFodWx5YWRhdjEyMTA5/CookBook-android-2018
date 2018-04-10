@@ -58,4 +58,10 @@
     <string name="search_history">Lịch sử tìm kiếm</string>
     <string name="clear_all">Xóa tất cả</string>
     <string name="enter_keyword">Nhập từ khóa</string>
+
+    <!-- for search result screen-->
+    <string-array name="tabs_search_result">
+        <item>THỰC ĐƠN</item>
+        <item>MÓN ĂN</item>
+    </string-array>
 </resources>

@@ -19,4 +19,7 @@ public interface Constant {
     String HOST_SCHEMA = "http://";
     String DOMAIN_NAME = "stg2.passp.asia";
     String HOST = HOST_SCHEMA + DOMAIN_NAME + "/api/";
+
+    // Key Intent
+    String KEY_WORD = "KEY_WORD";
 }

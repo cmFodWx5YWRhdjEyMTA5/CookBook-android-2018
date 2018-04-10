@@ -7,18 +7,23 @@
 package com.dangtin.cookbook.adapter;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dangtin.cookbook.R;
 import com.dangtin.cookbook.adapter.base.BaseRecyclerViewAdapter;
 import com.dangtin.cookbook.adapter.base.Releasable;
+import com.dangtin.cookbook.constant.Constant;
+import com.dangtin.cookbook.constant.GlobalFuntion;
 import com.dangtin.cookbook.data.models.SearchHistory;
 import com.dangtin.cookbook.injection.ActivityContext;
+import com.dangtin.cookbook.ui.search_result.SearchResultActivity;
 import com.dangtin.cookbook.utils.ListDecorator;
 
 import java.util.ArrayList;
@@ -80,6 +85,9 @@ public class SearchHistoryAdapter extends RecyclerView.Adapter<SearchHistoryAdap
         @BindView(R.id.tvTitle)
         TextView tvTitle;
 
+        @BindView(R.id.layout_item_history)
+        RelativeLayout layoutItemHistory;
+
         public SearchHistoryViewHolder(View itemView) {
             super(itemView);
         }
@@ -93,6 +101,15 @@ public class SearchHistoryAdapter extends RecyclerView.Adapter<SearchHistoryAdap
         public void bindData(Context context, SearchHistory searchHistory, int position) {
             if (searchHistory != null) {
                 tvTitle.setText(searchHistory.getTitle());
+
+                layoutItemHistory.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Bundle bundle = new Bundle();
+                        bundle.putString(Constant.KEY_WORD, searchHistory.getTitle());
+                        GlobalFuntion.startActivity(context, SearchResultActivity.class, bundle);
+                    }
+                });
             }
         }
     }
