@@ -12,6 +12,7 @@ import com.dangtin.cookbook.data.models.KeywordHot;
 import com.dangtin.cookbook.data.models.LevelDifficult;
 import com.dangtin.cookbook.data.models.MaterialFood;
 import com.dangtin.cookbook.data.models.Menu;
+import com.dangtin.cookbook.data.models.News;
 import com.dangtin.cookbook.data.models.QuantityFood;
 import com.dangtin.cookbook.data.models.SearchHistory;
 
@@ -164,6 +165,28 @@ public class FakeData {
         list.add(new SearchHistory("Ca chep om dua"));
         list.add(new SearchHistory("Oc xoa sa uot"));
         list.add(new SearchHistory("Ech om sau"));
+
+        return list;
+    }
+
+    public static ArrayList<News> getListNews() {
+        ArrayList<News> list = new ArrayList<>();
+        list.add(new News(1, "Dining out associated with increased exposure",
+                "New study finds burgers and other foods consumed at restaurants," +
+                        " fast food outlets or cafeterias", "11/04/2018 17:24"));
+        list.add(new News(2, "Dining out associated with increased exposure",
+                "New study finds burgers and other foods consumed at restaurants," +
+                        " fast food outlets or cafeterias", "11/04/2018 17:24"));
+        list.add(new News(3, "Dining out associated with increased exposure",
+                "New study finds burgers and other foods consumed at restaurants," +
+                        " fast food outlets or cafeterias", "11/04/2018 17:24"));
+        list.add(new News(4, "Dining out associated with increased exposure",
+                "New study finds burgers and other foods consumed at restaurants," +
+                        " fast food outlets or cafeterias", "11/04/2018 17:24"));
+        list.add(new News(5, "Dining out associated with increased exposure",
+                "New study finds burgers and other foods consumed at restaurants," +
+                        " fast food outlets or cafeterias", "11/04/2018 17:24"));
+
 
         return list;
     }

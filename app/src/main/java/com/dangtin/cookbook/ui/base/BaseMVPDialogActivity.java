@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.dangtin.cookbook.R;
 import com.dangtin.cookbook.constant.GlobalFuntion;
+import com.dangtin.cookbook.ui.news.NewsActivity;
 import com.dangtin.cookbook.ui.search.SearchActivity;
 import com.dangtin.cookbook.utils.Utils;
 
@@ -32,10 +33,6 @@ public abstract class BaseMVPDialogActivity extends BaseActivity implements Base
 
             case R.id.action_search:
                 GlobalFuntion.startActivity(this, SearchActivity.class);
-                return true;
-
-            case R.id.action_setting:
-                Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
                 return true;
 
             case R.id.action_my_profile:

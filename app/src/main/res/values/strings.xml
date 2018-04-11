@@ -17,11 +17,12 @@
     <string name="more_app">Các ứng dụng khác</string>
     <string name="liked">Đã thích</string>
     <string name="saw">Đã xem</string>
+    <string name="news">Thông báo</string>
+    <string name="other_feature">Tính năng khác</string>
 
     // action
     <string name="action_ok">OK</string>
     <string name="action_cancel">Hủy</string>
-    <string name="action_setting">Cài đặt</string>
     <string name="action_my_profile">Tài khoản của tôi</string>
     <string name="action_logout">Đăng xuất</string>
     <string name="action_search">Tìm kiếm</string>

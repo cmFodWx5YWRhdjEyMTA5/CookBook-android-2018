@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/define_dimen_10">
+
+    <ImageView
+        android:id="@+id/image_history"
+        android:layout_width="@dimen/define_dimen_80"
+        android:layout_height="@dimen/define_dimen_80"
+        android:layout_centerVertical="true"
+        android:src="@drawable/fake_image_news_food" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/define_dimen_10"
+        android:orientation="vertical">
+
+        <com.dangtin.cookbook.ui.widget.textview.RobotoRegularTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_size_small" />
+
+        <com.dangtin.cookbook.ui.widget.textview.RobotoRegularTextView
+            android:id="@+id/tvContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/define_dimen_5"
+            android:text="@string/app_name"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_xsmall" />
+
+        <com.dangtin.cookbook.ui.widget.textview.RobotoRegularTextView
+            android:id="@+id/tvDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/define_dimen_5"
+            android:text="@string/app_name"
+            android:textColor="@color/textColorSecondary"
+            android:textSize="@dimen/text_size_xsmall" />
+    </LinearLayout>
+</LinearLayout>
+
