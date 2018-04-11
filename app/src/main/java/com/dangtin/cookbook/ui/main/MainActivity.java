@@ -34,6 +34,7 @@ import com.dangtin.cookbook.constant.GlobalFuntion;
 import com.dangtin.cookbook.data.models.HomeObject;
 import com.dangtin.cookbook.ui.base.BaseMVPDialogActivity;
 import com.dangtin.cookbook.ui.food.FoodActivity;
+import com.dangtin.cookbook.ui.news.NewsActivity;
 
 import java.util.ArrayList;
 import java.util.Timer;
@@ -43,6 +44,8 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+import butterknife.Optional;
 import me.relex.circleindicator.CircleIndicator;
 
 
@@ -252,5 +255,15 @@ public class MainActivity extends BaseMVPDialogActivity implements MainMVPView,
     @Override
     public void onRefresh() {
         swipeRefreshLayout.setRefreshing(false);
+    }
+
+    @Optional
+    @OnClick({R.id.layout_news})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.layout_news:
+                GlobalFuntion.startActivity(this, NewsActivity.class);
+                break;
+        }
     }
 }

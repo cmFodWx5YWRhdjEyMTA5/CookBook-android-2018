@@ -1,12 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="wrap_content"
     card_view:cardBackgroundColor="@color/white"
     card_view:cardCornerRadius="0dp"
     card_view:cardElevation="@dimen/define_dimen_2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/define_dimen_10"
+        android:orientation="vertical">
+
+        <com.dangtin.cookbook.ui.widget.textview.RobotoBoldTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thực đơn hàng ngày cho gia đình 4 người ăn"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_size_normal" />
+
+        <com.dangtin.cookbook.ui.widget.views.AspectRatioNoRadiusImageView
+            android:id="@+id/image_featured"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="@dimen/define_dimen_10"
+            android:src="@drawable/fake_image_menu"
+            app:aspectRatio="0.56"
+            app:aspectRatioEnabled="true"
+            app:dominantMeasurement="Width" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/define_dimen_10"
+            android:layout_height="wrap_content">
+
+            <com.dangtin.cookbook.ui.widget.textview.RobotoRegularTextView
+                android:id="@+id/tvLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_small"
+                android:layout_centerVertical="true"
+                android:textColor="@color/textColorPrimary"
+                android:layout_marginRight="@dimen/define_dimen_5"
+                android:text="Dễ"/>
+
+            <ImageView
+                android:layout_width="@dimen/define_dimen_20"
+                android:layout_height="@dimen/define_dimen_20"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tvLevel"
+                android:src="@drawable/ic_star_rate_black"/>
+
+            <LinearLayout
+                android:id="@+id/layout_favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image_favorite"
+                    android:layout_width="@dimen/define_dimen_18"
+                    android:layout_height="@dimen/define_dimen_18"
+                    android:src="@drawable/ic_favorite_border"/>
+
+                <com.dangtin.cookbook.ui.widget.textview.RobotoRegularTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_small"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/textColorPrimary"
+                    android:text="100"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginRight="@dimen/define_dimen_12"
+                android:layout_toLeftOf="@+id/layout_favorite"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image_view"
+                    android:layout_width="@dimen/define_dimen_20"
+                    android:layout_height="@dimen/define_dimen_20"
+                    android:src="@drawable/ic_visibility"/>
+
+                <com.dangtin.cookbook.ui.widget.textview.RobotoRegularTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_small"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/textColorPrimary"
+                    android:text="100"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
 
 </android.support.v7.widget.CardView>
 

@@ -17,8 +17,9 @@
     <string name="more_app">Các ứng dụng khác</string>
     <string name="liked">Đã thích</string>
     <string name="saw">Đã xem</string>
-    <string name="news">Thông báo</string>
+    <string name="setting_notification">Nhận thông báo</string>
     <string name="other_feature">Tính năng khác</string>
+    <string name="news">Tin tức</string>
 
     // action
     <string name="action_ok">OK</string>
