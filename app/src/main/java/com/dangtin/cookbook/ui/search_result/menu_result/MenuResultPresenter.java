@@ -7,6 +7,7 @@
 
 package com.dangtin.cookbook.ui.search_result.menu_result;
 
+import com.dangtin.cookbook.constant.FakeData;
 import com.dangtin.cookbook.data.DataManager;
 import com.dangtin.cookbook.injection.PerActivity;
 import com.dangtin.cookbook.ui.base.BasePresenter;
@@ -31,5 +32,9 @@ public class MenuResultPresenter extends BasePresenter<MenuResultMVPView> {
     @Override
     public void destroyView() {
         super.destroyView();
+    }
+
+    public void getListMenuResult() {
+        getMvpView().updateListMenu(FakeData.getListMenu());
     }
 }

@@ -5,7 +5,7 @@
  * ******************************************************************************
  */
 
-package com.dangtin.cookbook.ui.search_result;
+package com.dangtin.cookbook.ui.my_kitchen;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -13,7 +13,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.widget.TextView;
 
 import com.dangtin.cookbook.R;
 import com.dangtin.cookbook.constant.Constant;
@@ -26,9 +25,8 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
-public class SearchResultActivity extends BaseMVPDialogActivity implements SearchResultMVPView {
+public class MyKitchenActivity extends BaseMVPDialogActivity implements MyKitchenMVPView {
 
     @BindView(R.id.tab_layout)
     TabLayout tabLayout;
@@ -36,13 +34,10 @@ public class SearchResultActivity extends BaseMVPDialogActivity implements Searc
     @BindView(R.id.view_pagger)
     ViewPager viewPager;
 
-    @BindView(R.id.tvKeyword)
-    TextView tvKeyword;
-
     @Inject
-    SearchResultPresenter presenter;
+    MyKitchenPresenter presenter;
 
-    String mKeyWord;
+    String mTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,15 +49,15 @@ public class SearchResultActivity extends BaseMVPDialogActivity implements Searc
 
         getDataIntent();
 
-        getSupportActionBar().hide();
-        tvKeyword.setText(mKeyWord);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(mTitle);
 
         initTabLayout();
     }
 
     private void getDataIntent() {
         Bundle bundle = getIntent().getExtras();
-        mKeyWord = bundle.getString(Constant.KEY_WORD);
+        mTitle = bundle.getString(Constant.MY_KITCHEN_TITLE);
     }
 
     @Override
@@ -72,7 +67,7 @@ public class SearchResultActivity extends BaseMVPDialogActivity implements Searc
 
     @Override
     protected int addContextView() {
-        return R.layout.layout_search_result;
+        return R.layout.layout_tab;
     }
 
     @Override
@@ -125,10 +120,5 @@ public class SearchResultActivity extends BaseMVPDialogActivity implements Searc
         public CharSequence getPageTitle(int position) {
             return titles[position];
         }
-    }
-
-    @OnClick(R.id.image_back)
-    public void onClickImageBack() {
-        onBackPressed();
     }
 }

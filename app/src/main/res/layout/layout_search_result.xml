@@ -42,22 +42,6 @@
         android:layout_height="1dp"
         android:background="@color/dividerColor" />
 
-    <com.dangtin.cookbook.ui.widget.views.CustomTabLayout
-        android:id="@+id/tab_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/layout_header"
-        android:background="@color/white"
-        app:tabIndicatorColor="@color/colorPrimary"
-        app:tabIndicatorHeight="1dp"
-        app:tabSelectedTextColor="@color/colorPrimary"
-        app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
-        app:tabTextColor="@color/textColorSecondary" />
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/view_pagger"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white" />
+    <include layout="@layout/layout_tab"/>
 
 </LinearLayout>

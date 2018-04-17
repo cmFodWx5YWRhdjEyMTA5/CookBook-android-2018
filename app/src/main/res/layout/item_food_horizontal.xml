@@ -16,7 +16,6 @@
         android:orientation="vertical">
 
         <com.dangtin.cookbook.ui.widget.views.AspectRatioNoRadiusImageView
-            android:id="@+id/image_featured"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvTitle"
@@ -26,7 +25,7 @@
             app:aspectRatioEnabled="true"
             app:dominantMeasurement="Width" />
 
-        <com.dangtin.cookbook.ui.widget.textview.RobotoBoldTextView
+        <com.dangtin.cookbook.ui.widget.textview.RobotoMediumTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/define_dimen_6"
@@ -35,7 +34,7 @@
             android:ellipsize="end"
             android:maxLines="2"
             android:text="Suon sao chua ngot"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/textColorPrimary"
             android:textSize="@dimen/text_size_normal" />
 
         <LinearLayout
@@ -54,8 +53,8 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/define_dimen_5"
                 android:text="Trung binh"
-                android:textColor="@color/textColorPrimary"
-                android:textSize="@dimen/text_size_xsmall" />
+                android:textColor="@color/textColorSecondary"
+                android:textSize="@dimen/text_size_small" />
 
             <ImageView
                 android:layout_width="@dimen/define_dimen_16"
@@ -93,8 +92,8 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="100"
-                    android:textColor="@color/textColorPrimary"
-                    android:textSize="@dimen/text_size_xsmall" />
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/text_size_small" />
             </LinearLayout>
 
             <LinearLayout
@@ -118,8 +117,8 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="100"
-                    android:textColor="@color/textColorPrimary"
-                    android:textSize="@dimen/text_size_xsmall" />
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="@dimen/text_size_small" />
             </LinearLayout>
         </LinearLayout>
 

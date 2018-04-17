@@ -10,13 +10,18 @@ package com.dangtin.cookbook.ui.search_result.food_result;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.dangtin.cookbook.R;
+import com.dangtin.cookbook.adapter.food.FoodGridViewAdapter;
 import com.dangtin.cookbook.constant.GlobalFuntion;
+import com.dangtin.cookbook.data.models.Food;
 import com.dangtin.cookbook.ui.base.BaseMVPFragmentWithDialog;
+
+import java.util.ArrayList;
 
 import javax.inject.Inject;
 
@@ -29,8 +34,14 @@ public class FoodResultFragment extends BaseMVPFragmentWithDialog implements Foo
     @BindView(R.id.swipe_refresh_layout)
     SwipeRefreshLayout swipeRefreshLayout;
 
+    @BindView(R.id.rcvData)
+    RecyclerView rcvData;
+
     @Inject
     FoodResultPresenter presenter;
+
+    @Inject
+    FoodGridViewAdapter foodGridViewAdapter;
 
     @Nullable
     @Override
@@ -49,12 +60,19 @@ public class FoodResultFragment extends BaseMVPFragmentWithDialog implements Foo
 
         swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.colorPrimary));
         swipeRefreshLayout.setOnRefreshListener(this);
+
+        foodGridViewAdapter.injectInto(rcvData);
+        presenter.getListFoodResult();
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         presenter.destroyView();
+
+        if (foodGridViewAdapter != null) {
+            foodGridViewAdapter.release();
+        }
     }
 
     @Override
@@ -70,5 +88,10 @@ public class FoodResultFragment extends BaseMVPFragmentWithDialog implements Foo
     @Override
     public void onErrorCallApi(int code) {
         GlobalFuntion.showMessageError(getActivity(), code);
+    }
+
+    @Override
+    public void updateListFood(ArrayList<Food> listFood) {
+        foodGridViewAdapter.setListData(listFood);
     }
 }

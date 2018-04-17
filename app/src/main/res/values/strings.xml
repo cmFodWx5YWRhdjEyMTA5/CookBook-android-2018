@@ -62,7 +62,7 @@
     <string name="enter_keyword">Nhập từ khóa</string>
 
     <!-- for search result screen-->
-    <string-array name="tabs_search_result">
+    <string-array name="tabs_menu_and_food">
         <item>THỰC ĐƠN</item>
         <item>MÓN ĂN</item>
     </string-array>

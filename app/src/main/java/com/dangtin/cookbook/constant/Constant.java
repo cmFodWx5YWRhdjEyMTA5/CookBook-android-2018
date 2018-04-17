@@ -22,4 +22,5 @@ public interface Constant {
 
     // Key Intent
     String KEY_WORD = "KEY_WORD";
+    String MY_KITCHEN_TITLE = "MY_KITCHEN_TITLE";
 }

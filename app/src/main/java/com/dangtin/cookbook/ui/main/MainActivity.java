@@ -30,10 +30,12 @@ import com.dangtin.cookbook.R;
 import com.dangtin.cookbook.adapter.CategoryAdapter;
 import com.dangtin.cookbook.adapter.FeaturedPagerAdapter;
 import com.dangtin.cookbook.adapter.ListHomeAdapter;
+import com.dangtin.cookbook.constant.Constant;
 import com.dangtin.cookbook.constant.GlobalFuntion;
 import com.dangtin.cookbook.data.models.HomeObject;
 import com.dangtin.cookbook.ui.base.BaseMVPDialogActivity;
 import com.dangtin.cookbook.ui.food.FoodActivity;
+import com.dangtin.cookbook.ui.my_kitchen.MyKitchenActivity;
 import com.dangtin.cookbook.ui.news.NewsActivity;
 
 import java.util.ArrayList;
@@ -185,7 +187,7 @@ public class MainActivity extends BaseMVPDialogActivity implements MainMVPView,
         featuredPagerAdapter.registerDataSetObserver(mIndicator.getDataSetObserver());
 
         if (presenter.getListFeatured() != null && presenter.getListFeatured().size() > 1) {
-        /*After setting the adapter use the timer */
+            /*After setting the adapter use the timer */
             if (mTimer == null)
                 mTimer = new Timer();
             mTimer.schedule(new TimerTask() {
@@ -258,11 +260,23 @@ public class MainActivity extends BaseMVPDialogActivity implements MainMVPView,
     }
 
     @Optional
-    @OnClick({R.id.layout_news})
+    @OnClick({R.id.layout_news, R.id.layout_favorite, R.id.layout_saw})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_news:
                 GlobalFuntion.startActivity(this, NewsActivity.class);
+                break;
+
+            case R.id.layout_favorite:
+                Bundle bundle = new Bundle();
+                bundle.putString(Constant.MY_KITCHEN_TITLE, getString(R.string.liked));
+                GlobalFuntion.startActivity(this, MyKitchenActivity.class, bundle);
+                break;
+
+            case R.id.layout_saw:
+                Bundle bd = new Bundle();
+                bd.putString(Constant.MY_KITCHEN_TITLE, getString(R.string.saw));
+                GlobalFuntion.startActivity(this, MyKitchenActivity.class, bd);
                 break;
         }
     }

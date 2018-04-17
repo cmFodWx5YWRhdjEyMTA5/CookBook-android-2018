@@ -11,6 +11,7 @@ import com.dangtin.cookbook.injection.modules.ActivityModule;
 import com.dangtin.cookbook.ui.food.FoodActivity;
 import com.dangtin.cookbook.ui.main.MainActivity;
 import com.dangtin.cookbook.ui.menu.MenuActivity;
+import com.dangtin.cookbook.ui.my_kitchen.MyKitchenActivity;
 import com.dangtin.cookbook.ui.news.NewsActivity;
 import com.dangtin.cookbook.ui.search.SearchActivity;
 import com.dangtin.cookbook.ui.search_result.SearchResultActivity;
@@ -36,6 +37,8 @@ public interface ActivityComponent {
     void inject(SearchResultActivity searchResultActivity);
 
     void inject(NewsActivity newsActivity);
+
+    void inject(MyKitchenActivity myKitchenActivity);
 
     void inject(MenuResultFragment menuResultFragment);
 

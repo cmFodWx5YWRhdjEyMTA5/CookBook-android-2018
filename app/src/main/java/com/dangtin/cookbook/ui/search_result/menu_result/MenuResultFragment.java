@@ -10,13 +10,18 @@ package com.dangtin.cookbook.ui.search_result.menu_result;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.dangtin.cookbook.R;
+import com.dangtin.cookbook.adapter.menu.MenuVerticalAdapter;
 import com.dangtin.cookbook.constant.GlobalFuntion;
+import com.dangtin.cookbook.data.models.Menu;
 import com.dangtin.cookbook.ui.base.BaseMVPFragmentWithDialog;
+
+import java.util.ArrayList;
 
 import javax.inject.Inject;
 
@@ -29,8 +34,14 @@ public class MenuResultFragment extends BaseMVPFragmentWithDialog implements Men
     @BindView(R.id.swipe_refresh_layout)
     SwipeRefreshLayout swipeRefreshLayout;
 
+    @BindView(R.id.rcvData)
+    RecyclerView rcvData;
+
     @Inject
     MenuResultPresenter presenter;
+
+    @Inject
+    MenuVerticalAdapter menuVerticalAdapter;
 
     @Nullable
     @Override
@@ -49,12 +60,19 @@ public class MenuResultFragment extends BaseMVPFragmentWithDialog implements Men
 
         swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.colorPrimary));
         swipeRefreshLayout.setOnRefreshListener(this);
+
+        menuVerticalAdapter.injectInto(rcvData);
+        presenter.getListMenuResult();
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         presenter.destroyView();
+
+        if (menuVerticalAdapter != null) {
+            menuVerticalAdapter.release();
+        }
     }
 
     @Override
@@ -70,5 +88,10 @@ public class MenuResultFragment extends BaseMVPFragmentWithDialog implements Men
     @Override
     public void onErrorCallApi(int code) {
         GlobalFuntion.showMessageError(getActivity(), code);
+    }
+
+    @Override
+    public void updateListMenu(ArrayList<Menu> listMenu) {
+        menuVerticalAdapter.setListData(listMenu);
     }
 }
