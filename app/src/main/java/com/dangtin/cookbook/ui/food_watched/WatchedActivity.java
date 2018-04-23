@@ -5,7 +5,7 @@
  * ******************************************************************************
  */
 
-package com.dangtin.cookbook.ui.my_kitchen;
+package com.dangtin.cookbook.ui.food_watched;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -15,18 +15,17 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
 import com.dangtin.cookbook.R;
-import com.dangtin.cookbook.constant.Constant;
 import com.dangtin.cookbook.constant.GlobalFuntion;
 import com.dangtin.cookbook.ui.base.BaseMVPDialogActivity;
-import com.dangtin.cookbook.ui.search_result.food_result.FoodResultFragment;
-import com.dangtin.cookbook.ui.search_result.menu_result.MenuResultFragment;
+import com.dangtin.cookbook.ui.food_favorite.food_favorite.FoodFavoriteFragment;
+import com.dangtin.cookbook.ui.food_favorite.menu_favorite.MenuFavoriteFragment;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MyKitchenActivity extends BaseMVPDialogActivity implements MyKitchenMVPView {
+public class WatchedActivity extends BaseMVPDialogActivity implements WatchedMVPView {
 
     @BindView(R.id.tab_layout)
     TabLayout tabLayout;
@@ -35,9 +34,7 @@ public class MyKitchenActivity extends BaseMVPDialogActivity implements MyKitche
     ViewPager viewPager;
 
     @Inject
-    MyKitchenPresenter presenter;
-
-    String mTitle;
+    WatchedPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,17 +44,10 @@ public class MyKitchenActivity extends BaseMVPDialogActivity implements MyKitche
         viewUnbind = ButterKnife.bind(this);
         presenter.initialView(this);
 
-        getDataIntent();
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(mTitle);
+        getSupportActionBar().setTitle(getString(R.string.liked));
 
         initTabLayout();
-    }
-
-    private void getDataIntent() {
-        Bundle bundle = getIntent().getExtras();
-        mTitle = bundle.getString(Constant.MY_KITCHEN_TITLE);
     }
 
     @Override
@@ -104,9 +94,9 @@ public class MyKitchenActivity extends BaseMVPDialogActivity implements MyKitche
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new MenuResultFragment();
+                    return new MenuFavoriteFragment();
                 case 1:
-                    return new FoodResultFragment();
+                    return new FoodFavoriteFragment();
             }
             return null;
         }

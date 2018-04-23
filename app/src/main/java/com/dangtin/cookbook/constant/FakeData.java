@@ -51,17 +51,17 @@ public class FakeData {
         ArrayList<HomeObject> list = new ArrayList<>();
 
         ArrayList<Menu> listMenu = new ArrayList<>();
-        listMenu.add(new Menu());
-        listMenu.add(new Menu());
-        listMenu.add(new Menu());
+        listMenu.add(new Menu(""));
+        listMenu.add(new Menu(""));
+        listMenu.add(new Menu(""));
         list.add(new HomeObject(HomeObject.TYPE_MENU_LATEST,
                 context.getString(R.string.title_menu_latest), listMenu, null));
 
         ArrayList<Food> listFood = new ArrayList<>();
-        listFood.add(new Food());
-        listFood.add(new Food());
-        listFood.add(new Food());
-        listFood.add(new Food());
+        listFood.add(new Food(""));
+        listFood.add(new Food(""));
+        listFood.add(new Food(""));
+        listFood.add(new Food(""));
         list.add(new HomeObject(HomeObject.TYPE_FOOD_LATEST,
                 context.getString(R.string.title_food_latest), null, listFood));
 
@@ -70,7 +70,8 @@ public class FakeData {
         list.add(new HomeObject(HomeObject.TYPE_ADMOB, listAdmob));
 
         for (int i = 0; i < getListCategory().size(); i++) {
-            list.add(new HomeObject(HomeObject.TYPE_CATEGORY, getListCategory().get(i).getName(), null, listFood));
+            list.add(new HomeObject(HomeObject.TYPE_CATEGORY, getListCategory().get(i).getName(),
+                    null, listFood));
         }
 
         list.add(new HomeObject(HomeObject.TYPE_ADMOB, listAdmob));
@@ -80,12 +81,16 @@ public class FakeData {
 
     public static ArrayList<Menu> getListMenu() {
         ArrayList<Menu> listMenu = new ArrayList<>();
-        listMenu.add(new Menu());
-        listMenu.add(new Menu());
-        listMenu.add(new Menu());
-        listMenu.add(new Menu());
-        listMenu.add(new Menu());
-        listMenu.add(new Menu());
+        listMenu.add(new Menu("Mon an danh cho nguoi tieu duong"));
+        listMenu.add(new Menu("Thuc don hang ngay"));
+        listMenu.add(new Menu("Thuc don de Thuc don hang ngay Thuc don hang ngay"));
+        listMenu.add(new Menu("Nhung mon an"));
+        listMenu.add(new Menu("Thuc don nau co"));
+        listMenu.add(new Menu("Thuc don de Thuc don hang ngay Thuc don hang ngay"));
+        listMenu.add(new Menu("Thuc don gian"));
+        listMenu.add(new Menu("Thuc don gian"));
+        listMenu.add(new Menu("Mon an danh cho nguoi tieu duong"));
+        listMenu.add(new Menu("Thuc don gian"));
 
         return listMenu;
     }
@@ -110,19 +115,21 @@ public class FakeData {
     }
 
     public static ArrayList<Food> getListFood() {
-        ArrayList<Food> listMenu = new ArrayList<>();
-        listMenu.add(new Food());
-        listMenu.add(new Food());
-        listMenu.add(new Food());
-        listMenu.add(new Food());
-        listMenu.add(new Food());
-        listMenu.add(new Food());
-        listMenu.add(new Food());
-        listMenu.add(new Food());
-        listMenu.add(new Food());
-        listMenu.add(new Food());
+        ArrayList<Food> list = new ArrayList<>();
+        list.add(new Food("Ca chep om dua hanh toi"));
+        list.add(new Food("Viet xiem ba dinh"));
+        list.add(new Food("Thit trua xao rau muong - chanh toi uot Ga mach hoach"));
+        list.add(new Food("Ga ran cay"));
+        list.add(new Food("Ga mach hoach"));
+        list.add(new Food("Ca chien"));
+        list.add(new Food("Ba ba ham thuoc bac Ba ba chanh toi uot Thit trua xao rau muong"));
+        list.add(new Food("Thit bo xao"));
+        list.add(new Food("Thit trua xao rau muong - chanh toi uot"));
+        list.add(new Food("Thit cho sao lan, Thit cho sao lan"));
+        list.add(new Food("Ga hap"));
+        list.add(new Food("Thit bo xao"));
 
-        return listMenu;
+        return list;
     }
 
     public static ArrayList<MaterialFood> getListMaterialFood() {

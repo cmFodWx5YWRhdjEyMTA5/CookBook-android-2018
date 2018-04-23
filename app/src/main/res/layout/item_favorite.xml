@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/define_dimen_10"
+    android:layout_marginTop="@dimen/define_dimen_10"
+    card_view:cardBackgroundColor="@color/white"
+    card_view:cardCornerRadius="@dimen/define_dimen_4"
+    card_view:cardElevation="@dimen/define_dimen_2">
+
+    <LinearLayout
+        android:id="@+id/layoutItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.dangtin.cookbook.ui.widget.views.AspectRatioNoRadiusImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/fake_image_food"
+            app:aspectRatio="0.75"
+            app:aspectRatioEnabled="true"
+            app:dominantMeasurement="Width" />
+
+        <com.dangtin.cookbook.ui.widget.textview.RobotoMediumTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:padding="@dimen/define_dimen_10"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_small" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>

@@ -30,12 +30,11 @@ import com.dangtin.cookbook.R;
 import com.dangtin.cookbook.adapter.CategoryAdapter;
 import com.dangtin.cookbook.adapter.FeaturedPagerAdapter;
 import com.dangtin.cookbook.adapter.ListHomeAdapter;
-import com.dangtin.cookbook.constant.Constant;
 import com.dangtin.cookbook.constant.GlobalFuntion;
 import com.dangtin.cookbook.data.models.HomeObject;
 import com.dangtin.cookbook.ui.base.BaseMVPDialogActivity;
 import com.dangtin.cookbook.ui.food.FoodActivity;
-import com.dangtin.cookbook.ui.my_kitchen.MyKitchenActivity;
+import com.dangtin.cookbook.ui.food_favorite.FavoriteActivity;
 import com.dangtin.cookbook.ui.news.NewsActivity;
 
 import java.util.ArrayList;
@@ -268,15 +267,13 @@ public class MainActivity extends BaseMVPDialogActivity implements MainMVPView,
                 break;
 
             case R.id.layout_favorite:
-                Bundle bundle = new Bundle();
-                bundle.putString(Constant.MY_KITCHEN_TITLE, getString(R.string.liked));
-                GlobalFuntion.startActivity(this, MyKitchenActivity.class, bundle);
+                GlobalFuntion.startActivity(this, FavoriteActivity.class);
                 break;
 
             case R.id.layout_saw:
-                Bundle bd = new Bundle();
+                /*Bundle bd = new Bundle();
                 bd.putString(Constant.MY_KITCHEN_TITLE, getString(R.string.saw));
-                GlobalFuntion.startActivity(this, MyKitchenActivity.class, bd);
+                GlobalFuntion.startActivity(this, WatchedActivity.class, bd);*/
                 break;
         }
     }

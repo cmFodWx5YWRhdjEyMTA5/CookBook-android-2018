@@ -16,6 +16,10 @@ public class Food {
     @SerializedName("name_food")
     private String name;
 
+    public Food(String name) {
+        this.name = name;
+    }
+
     public int getId() {
         return id;
     }

@@ -28,7 +28,7 @@ public class ParseManager {
     }
 
     public Food parseFood(FoodResponse foodResponse) {
-        Food food = new Food();
+        Food food = new Food("");
         if (foodResponse != null) {
             food = foodResponse.getFood();
         }

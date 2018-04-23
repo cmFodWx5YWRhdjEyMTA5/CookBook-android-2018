@@ -8,10 +8,13 @@
 package com.dangtin.cookbook.injection.components;
 
 import com.dangtin.cookbook.injection.modules.ActivityModule;
+import com.dangtin.cookbook.ui.food_favorite.food_favorite.FoodFavoriteFragment;
+import com.dangtin.cookbook.ui.food_favorite.menu_favorite.MenuFavoriteFragment;
 import com.dangtin.cookbook.ui.food.FoodActivity;
+import com.dangtin.cookbook.ui.food_watched.WatchedActivity;
 import com.dangtin.cookbook.ui.main.MainActivity;
 import com.dangtin.cookbook.ui.menu.MenuActivity;
-import com.dangtin.cookbook.ui.my_kitchen.MyKitchenActivity;
+import com.dangtin.cookbook.ui.food_favorite.FavoriteActivity;
 import com.dangtin.cookbook.ui.news.NewsActivity;
 import com.dangtin.cookbook.ui.search.SearchActivity;
 import com.dangtin.cookbook.ui.search_result.SearchResultActivity;
@@ -38,9 +41,15 @@ public interface ActivityComponent {
 
     void inject(NewsActivity newsActivity);
 
-    void inject(MyKitchenActivity myKitchenActivity);
+    void inject(FavoriteActivity favoriteActivity);
+
+    void inject(WatchedActivity watchedActivity);
 
     void inject(MenuResultFragment menuResultFragment);
 
     void inject(FoodResultFragment foodResultFragment);
+
+    void inject(FoodFavoriteFragment foodFavoriteFragment);
+
+    void inject(MenuFavoriteFragment menuFavoriteFragment);
 }
